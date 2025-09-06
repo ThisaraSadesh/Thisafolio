@@ -37,9 +37,15 @@ const Hero = () => {
             words="Converting Ideas into User-Friendly Experiences"
           />
 
-          <img src="/profile1.png" alt="profile" width={300} height={300}/>
+          <img
+            src="/profile1.png"
+            alt="profile"
+            width={300}
+            height={300}
+            className="bg-transparent rounded-full w-[200px] h-[200px] "
+          />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl  ">
-            Hi! I'm Thisara <br></br>
+            Hi! I'm Thisara <br/>
             <span>Next.js Developer </span>
           </p>
           <a href="#about">
