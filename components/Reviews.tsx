@@ -1,4 +1,5 @@
-export const dynamic = "force-dynamic"; // 👈 Add this at the top
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 
 import React from "react";
