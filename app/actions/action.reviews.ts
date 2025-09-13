@@ -26,7 +26,7 @@ export const createReview = async (formData: FormData) => {
         "image/gif",
       ];
       if (!allowedTypes.includes(avatar.type)) {
-         errMsg = "Please upload only image-type file.";
+        errMsg = "Please upload only image-type file.";
 
         return { success: false, error: errMsg };
       }
@@ -47,7 +47,7 @@ export const createReview = async (formData: FormData) => {
 
     if (!result) {
       console.log("Review adding failed");
-       errMsg = "Review adding failed";
+      errMsg = "Review adding failed";
       return { success: false, error: errMsg };
     }
 

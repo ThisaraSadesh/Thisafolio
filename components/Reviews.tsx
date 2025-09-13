@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic"; // 👈 Add this at the top
+
+
 import React from "react";
 import { FetchReviews } from "@/app/actions/action.reviews";
 import { AnimatedTestimonials } from "./ui/animated-testimonials";
@@ -20,6 +23,7 @@ const Reviews = async () => {
       name: rev.user,
       designation: "Manager",
       src: base64Image?base64Image : 'https://static.vecteezy.com/system/resources/previews/036/594/092/non_2x/man-empty-avatar-photo-placeholder-for-social-networks-resumes-forums-and-dating-sites-male-and-female-no-photo-images-for-unfilled-user-profile-free-vector.jpg', // Pass base64 string to image src
+      rating:rev.rating
     };
   });
   return (

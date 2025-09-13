@@ -3,10 +3,16 @@ import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
 interface StarRatingProps {
-  name?: string; // optional, default to "rating"
+  name?: string;
+  currentValue?: number;
+
+  // optional, default to "rating"
 }
 
-const StarRating: React.FC<StarRatingProps> = ({ name = "rating" }) => {
+const StarRating: React.FC<StarRatingProps> = ({
+  name = "rating",
+  currentValue,
+}) => {
   const [rating, setRating] = useState<number>();
   const [hovered, setHovered] = useState<number | null>(null);
 
@@ -21,19 +27,27 @@ const StarRating: React.FC<StarRatingProps> = ({ name = "rating" }) => {
               name={name}
               checked={rating == value}
               onChange={(e) => setRating(Number(e.target.value))}
-              value={value}
+              value={currentValue ? currentValue : value}
               className="hidden"
+              disabled={!!currentValue}
             />
             <FaStar
-              size={40}
-              color={value <= (hovered || rating) ? "yellow" : "gray"}
-              onMouseEnter={() => setHovered(value)}
-              onMouseLeave={() => setHovered(null)}
+              size={30}
+              color={
+                currentValue
+                  ? value <= currentValue
+                    ? "yellow"
+                    : "gray"
+                  : value <= (hovered || rating || 0)
+                  ? "yellow"
+                  : "gray"
+              }
+              onMouseEnter={() => (!currentValue ? setHovered(value) : null)}
+              onMouseLeave={() => (!currentValue ? setHovered(null) : null)}
             />{" "}
           </label>
         );
       })}
-  
     </div>
   );
 };

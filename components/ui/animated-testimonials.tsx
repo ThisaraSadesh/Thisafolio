@@ -4,12 +4,14 @@ import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 
 import { useEffect, useState } from "react";
+import StarRating from "./StarRating";
 
 type Testimonial = {
   quote: string;
   name: string;
   designation: string;
   src: string;
+  rating:number
 };
 export const AnimatedTestimonials = ({
   testimonials,
@@ -92,7 +94,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex flex-col justify-between py-4">
+        <div className="flex flex-col justify-between py-4 gap-5">
           <motion.div
             key={active}
             initial={{
@@ -118,6 +120,7 @@ export const AnimatedTestimonials = ({
             <p className="text-sm text-gray-500 dark:text-neutral-500">
               {testimonials[active].designation}
             </p>
+            <StarRating currentValue={testimonials[active].rating}/>
             <motion.p className="mt-8 text-lg text-gray-500 dark:text-neutral-300">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
