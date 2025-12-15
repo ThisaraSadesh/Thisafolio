@@ -17,7 +17,7 @@ const Taskbar = () => {
       {page === "portfolio" && (
         <div className="flex items-center p-2 gap-2 b-shadow-black-300 h-full mx-4 bg-blue-500 rounded-md cursor-pointer">
           <Image
-            src="/internetexplorer.ico"
+            src="/ie.png"
             alt="icon"
             width={25}
             height={25}

@@ -14,7 +14,7 @@ const LandingPage = () => {
         <Folder title=" Projects" image="/internetexplorer.ico" />
         <Folder title="Testimonials" image="/internetexplorer.ico" />
         <Folder title="Contact" image="/internetexplorer.ico" /> */}
-       <Link href="/portfolio"><Folder title="Portfolio" image="/internetexplorer.ico" /></Link>
+       <Link href="/portfolio"><Folder title="Portfolio" image="/ie.png" /></Link>
       </div>
     </div>
   );
