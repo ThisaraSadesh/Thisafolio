@@ -23,7 +23,7 @@ const Taskbar = () => {
             height={25}
           />
 
-          <span>{page}</span>
+          <span>ThisaraFolio</span>
         </div>
       )}
     </div>
